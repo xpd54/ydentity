@@ -1,3 +1,3 @@
-import {COLORS, TITLE} from "./looks"
+import {COLORS, TITLE, SIZES} from "./looks"
 import icons from "./icons"
-export {COLORS, TITLE, icons}
+export {COLORS, TITLE, SIZES, icons}
