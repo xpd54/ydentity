@@ -22,3 +22,4 @@ How to add more QR code to scan with + button
 2. qr "otpauth://totp/fire@google.com?secret=JBSWY3DPEHPSFWE&issuer=Firebase&logo=https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-1024.png"
 3. ToTp QR code have value formate like mentioned in 2
 4. code with change after 1 min
+5. Can change qr values in same way and it should work for other QR as well.
