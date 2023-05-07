@@ -23,3 +23,7 @@ How to add more QR code to scan with + button
 3. ToTp QR code have value formate like mentioned in 2
 4. code with change after 1 min
 5. Can change qr values in same way and it should work for other QR as well.
+
+![screenshot1](./screenshots/IMG_7275.PNG)
+![screenshot2](./screenshots/IMG_7276.PNG)
+![screenshot3](./screenshots/IMG_7277.PNG)
