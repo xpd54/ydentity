@@ -3,6 +3,7 @@ const COLORS = {
     limeGreen: "#12ca27",
     white: "#F3F4F8",
     gray: "#83829A",
+    red: "#FF6347"
   };
 
   const SIZES = {
