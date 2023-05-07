@@ -4,6 +4,7 @@ import { Text, View, Button} from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import styles from "./scan.style";
 import { COLORS } from "../constants";
+import addService from '../hooks/addService';
 const Scan = () => {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
@@ -27,8 +28,17 @@ const Scan = () => {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     setText(data)
-    router.back()
-    console.log('Type: ' + type + '\nData: ' + data)
+    const url = new URL(data)
+    const obj = Object.fromEntries(new URLSearchParams(url.search))
+    const email = url.pathname.slice(1)
+    const title = obj.issuer
+    const logo = obj.logo
+    const auth = obj.secret
+    // addService("addService", {title, email, logo, auth})
+    addService("addService", {title, email, logo, auth},() => {
+      router.back()
+    })
+    console.log('Type: ' + type + '\nData: ' + email)
   };
 
   // Check permissions and return the screens
