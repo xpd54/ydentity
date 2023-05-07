@@ -1,9 +1,17 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
-
+import {useState, useEffect} from "react"
 import styles from "./TotpCell.style";
 import { checkImageURL } from "../../../hooks/utils";
-
+import totp from "totp-generator";
 const TotpCell = ({ service, handleNavigate }) => {
+  const [value, setValue] = useState(totp(service.auth, { period: 60}));
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setValue(totp(service.auth, { period: 60}))
+    }, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
       <TouchableOpacity style={styles.logoContainer}>
@@ -26,7 +34,7 @@ const TotpCell = ({ service, handleNavigate }) => {
           {service.email}
         </Text>
         <Text style={styles.serviceValue}>
-          {service.value}
+          { value }
         </Text>
       </View>
     </TouchableOpacity>
