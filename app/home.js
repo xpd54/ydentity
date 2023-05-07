@@ -4,6 +4,8 @@ import { Stack, useRouter } from "expo-router";
 import { COLORS, FONT, SIZES, TITLE, icons } from "../constants";
 import {NavigationBtn, Totp} from "../componets"
 const Home = () => {
+    const {data} = useState('data');
+    console.log(data)
     const router = useRouter();
     return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite}}>

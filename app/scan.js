@@ -27,6 +27,7 @@ const Scan = () => {
   const handleBarCodeScanned = ({ type, data }) => {
     setScanned(true);
     setText(data)
+    router.back()
     console.log('Type: ' + type + '\nData: ' + data)
   };
 
@@ -57,7 +58,7 @@ const Scan = () => {
           {
             scanned && 
             <Button 
-                title={'Add'} 
+                title={'Finised Reading'}
                 color={COLORS.red} 
                 onPress={() => router.back()}
             />
