@@ -13,6 +13,10 @@ const COLORS = {
     xxLarge: 32,
   };
 
+  const FONT = {
+    bold: "bold",
+  };
+
   const TITLE = "Ydenticator"
 
-  export { COLORS, TITLE, SIZES };
+  export { COLORS, TITLE, SIZES, FONT };
