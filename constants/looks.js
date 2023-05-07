@@ -3,4 +3,6 @@ const COLORS = {
     limeGreen: "#12ca27"
   };
 
-  export { COLORS };
+  const TITLE = "Ydenticator"
+
+  export { COLORS, TITLE };
